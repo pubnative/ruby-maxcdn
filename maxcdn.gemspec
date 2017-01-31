@@ -13,8 +13,8 @@ Gem::Specification.new do |gem|
   gem.email = "joshua@mervine.net"
   gem.authors = ["Joshua P. Mervine"]
   gem.add_dependency 'json' if RUBY_VERSION.start_with? "1.8"
-  gem.add_dependency 'signet', '>= 0.6'
+  gem.add_dependency 'signet', '~> 0.7'
   gem.add_dependency 'faraday', '~> 0.9'
   gem.add_dependency 'net-http-persistent', '~> 2.9'
-  gem.add_dependency 'addressable', '>= 2.3'
+  gem.add_dependency 'addressable', '~> 2.4'
 end
