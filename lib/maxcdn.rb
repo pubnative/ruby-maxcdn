@@ -57,7 +57,10 @@ module MaxCDN
 
       begin
         url, path = req_opts[:uri].match(%r"^(https://[^/]+)(/.+)$")[1, 2]
-        conn = Faraday.new(:url => url) do |faraday|
+
+        conn_opts = {url: url}
+        conn_opts[:proxy] = options[:proxy] if options[:proxy]
+        conn = Faraday.new(conn_opts) do |faraday|
           faraday.adapter :net_http_persistent
         end
 
